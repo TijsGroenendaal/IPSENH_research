@@ -1,0 +1,2 @@
+EXPLAIN (ANALYZE ON, FORMAT JSON)
+SELECT 'Hello', 'World';
