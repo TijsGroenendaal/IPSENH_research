@@ -1,9 +1,6 @@
 FROM postgres:latest
 
 RUN apt update
-RUN apt install python3 -y
-RUN apt install python3-pip -y
-RUN apt install nano -y
+RUN apt install python3 python3-pip nano systemctl sudo -y
 
-RUN pip install getopts
-RUN pip install pandas
+RUN pip install getopts | pip install pandas
