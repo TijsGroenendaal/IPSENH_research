@@ -13,13 +13,14 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 White='\033[0;37m'        # White
 
-if [[ $(sudo systemctl is-active postgresql) -ne "active" ]]; then
+if [[ $(sudo systemctl is-active postgresql) -ne active ]]; then
 	echo -e "${Red} postgresql not running: Exiting now \n ${Color_Off}"
 	exit
 fi
 
 while getopts d:p:q:o:s: flag
 do
+	# shellcheck disable=SC2220
 	case ${flag} in
 		d) conf_dir=${OPTARG};;
 		p) psql_config=${OPTARG};;
@@ -42,27 +43,28 @@ echo -e "using output directory ${Green}${output_dir}${Color_Off}"
 
 echo -e
 
-for config in ${conf_dir}/*.conf; do
+for config in "${conf_dir}"/*.conf; do
 
 	echo -e "\nStopping postgresql Service"
 	sudo systemctl stop postgresql
 
 	echo -e "${White}Switching config file to${Yellow}$config${Color_Off}"
-	sudo cp -r $config "${psql_config}/postgresql.conf"
+	sudo cp -r "$config" "${psql_config}/postgresql.conf"
 
 	sudo systemctl start postgresql
-	conf_output_dir="${output_dir}/$(basename ${config} .conf)"
+	conf_output_dir="${output_dir}/$(basename "$config" .conf)"
 
 	mkdir "$conf_output_dir"
 
 	for query in "$query_dir"/*.sql; do
 		echo -e "Executing Query ${Purple}${query}${Color_Off}"
-		sample_output_dir="${conf_output_dir}/$(basename ${query} .sql)"
+		sample_output_dir="${conf_output_dir}/$(basename "${query}" .sql)"
 		mkdir "$sample_output_dir"
 		for sample in $(seq 1 $sample_count); do
-			file_output="${sample_output_dir}/sample${sample}.json"
-			psql -U postgres -f $query -t -o $file_output
+			file_output="${sample_output_dir}/sample_${sample}.json"
+			psql -U postgres -f "$query" -t -o "$file_output"
 			python3 output_cleaner.py -f "${file_output}"
 		done
+		python3 measurement_result_merger.py -s "$sample_output_dir" -o "$sample_output_dir/results.csv"
 	done
 done
