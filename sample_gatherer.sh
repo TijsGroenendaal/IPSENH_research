@@ -51,12 +51,12 @@ for config in "${conf_dir}"/*.conf; do
 	echo -e "${White}Switching config file to${Yellow}$config${Color_Off}"
 	sudo cp -r "$config" "${psql_config}/postgresql.conf"
 
-	sudo systemctl start postgresql
 	conf_output_dir="${output_dir}/$(basename "$config" .conf)"
 
 	mkdir "$conf_output_dir"
 
 	for query in "$query_dir"/*.sql; do
+		sudo systemctl restart postgresql
 		echo -e "Executing Query ${Purple}${query}${Color_Off}"
 		sample_output_dir="${conf_output_dir}/$(basename "${query}" .sql)"
 		mkdir "$sample_output_dir"
