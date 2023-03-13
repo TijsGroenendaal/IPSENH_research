@@ -1,2 +1,5 @@
 EXPLAIN (ANALYZE ON, FORMAT JSON)
-SELECT 'Hello', 'World';
+SELECT
+    count(*)
+FROM timeseries
+GROUP BY resource

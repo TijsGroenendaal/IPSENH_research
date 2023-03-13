@@ -1,2 +1,5 @@
 EXPLAIN (ANALYZE ON, FORMAT JSON)
-SELECT 'Bye World'
+SELECT
+    count(*)
+FROM timeseries
+WHERE resource = 1

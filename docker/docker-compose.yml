@@ -13,6 +13,5 @@ services:
       - ../:/ipsenh_research
       - postgres:/data/postgres
 
-
 volumes:
   postgres:
