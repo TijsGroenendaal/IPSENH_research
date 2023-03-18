@@ -35,7 +35,7 @@ $$
                     INSERT INTO timeseries
                     SELECT
                         gen_random_uuid() as id,
-                        -- Add 20 seconds to each series
+                        -- Add 10 seconds to each series
                         ('2020-01-01 00:00:00.000'::timestamp) + ((serie * 10) * interval '1 second') as datetime,
                         random() * 100 > 2 as status,
                         (r_group * 1000) + resource
