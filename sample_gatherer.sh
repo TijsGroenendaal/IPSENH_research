@@ -18,7 +18,7 @@ if [[ $(sudo systemctl is-active postgresql) -ne active ]]; then
 	exit
 fi
 
-while getopts d:p:q:o:s: flag
+while getopts d:p:q:o:s:c: flag
 do
 	# shellcheck disable=SC2220
 	case ${flag} in
@@ -27,6 +27,7 @@ do
 		q) query_dir=${OPTARG};;
 		o) output_dir=${OPTARG};;
 		s) sample_count=${OPTARG};;
+    c) clean_database=${OPTARG};;
 	esac
 done
 
@@ -35,13 +36,17 @@ if [[ -z ${psql_config} ]]; then psql_config="/etc/postgresql/15/main"; fi
 if [[ -z ${query_dir} ]]; then query_dir="$(pwd)/query"; fi
 if [[ -z ${output_dir} ]]; then output_dir="$(pwd)/output"; fi
 if [[ -z ${sample_count} ]]; then sample_count=30; fi
+if [[ -z ${clean_database} ]]; then clean_database="false"; fi
 
 echo -e "using postgresql config directory ${Green}${psql_config}${Color_Off}"
 echo -e "using research config directory ${Green}${conf_dir}${Color_Off}"
 echo -e "using query directory ${Green}${query_dir}${Color_Off}"
 echo -e "using output directory ${Green}${output_dir}${Color_Off}"
 
-echo -e
+if [[ $clean_database -eq true ]]; then
+  echo -e "${Red}clean populating database${Color_Off}"
+  psql -U postgres -f populator/populator.sql
+fi
 
 for config in "${conf_dir}"/*.conf; do
 
