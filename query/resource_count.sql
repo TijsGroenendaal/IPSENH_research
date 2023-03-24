@@ -1,3 +1,4 @@
+EXPLAIN (ANALYSE ON, FORMAT JSON, BUFFERS ON)
 SELECT
     resource,
     COUNT(*)

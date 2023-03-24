@@ -1,4 +1,4 @@
-EXPLAIN (FORMAT JSON)
+EXPLAIN (ANALYSE ON, FORMAT JSON, BUFFERS ON)
 SELECT
     external.resource,
     DATE_TRUNC('day', external.datetime) AS date,

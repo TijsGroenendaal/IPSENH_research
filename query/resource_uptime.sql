@@ -1,4 +1,4 @@
-EXPLAIN (FORMAT JSON)
+EXPLAIN (ANALYSE ON, FORMAT JSON, BUFFERS ON)
 SELECT
     external.resource,
     count(*)::FLOAT,
