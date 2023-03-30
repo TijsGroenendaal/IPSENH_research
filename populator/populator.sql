@@ -19,18 +19,21 @@ CREATE TABLE timeseries (
     resource int REFERENCES resources(id)
 );
 
+CREATE INDEX timeseries_timestamp_index ON timeseries(datetime);
+CREATE INDEX timeseries_resource_index ON timeseries(resource);
+
 do
 $$
     declare
         r_group record;
         resource record;
-	resource_id integer;
+	    resource_id integer;
     begin
         for r_group in 1..10 loop
             INSERT INTO resource_group
             VALUES (r_group);
             for resource in 1..10 loop
-		resource_id = (r_group * 1000) + resource;
+		        resource_id = (r_group * 1000) + resource;
                 INSERT INTO resources
                 VALUES (resource_id, r_group);
 
@@ -41,8 +44,8 @@ $$
                         ('2020-01-01 00:00:00.000'::timestamp) + ((serie * 10) * interval '1 second') as datetime,
                         random() * 100 > 2 as status,
                         resource_id
-                    FROM generate_series(1, 535680) as serie;
-		    raise notice 'inserted resource %', resource_id;
+                    FROM generate_series(1, 267840) as serie;
+		            raise notice 'inserted resource %', resource_id;
                 end loop;
             end loop;
     end;

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source progress_bar.sh
+
 # Reset
 Color_Off='\033[0m'       # Text Reset
 
@@ -59,6 +61,7 @@ for config in "${conf_dir}"/*.conf; do
 		sample_output_dir="${conf_output_dir}/$(basename "${query}" .sql)"
 		mkdir "$sample_output_dir"
 		for sample in $(seq 1 $sample_count); do
+		  show_progress "$sample" "$sample_count"
 			file_output="${sample_output_dir}/sample_${sample}.json"
 			psql -U postgres -f "$query" -t -o "$file_output"
 			python3 output_cleaner.py -f "${file_output}"
