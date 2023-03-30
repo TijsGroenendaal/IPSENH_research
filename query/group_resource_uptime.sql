@@ -10,6 +10,8 @@ INNER JOIN (
         internal.resource,
         DATE_TRUNC('day', internal.datetime) AS date
     FROM timeseries AS internal
+    INNER JOIN resources r on internal.resource = r.id
+    WHERE r.r_group = 5
     GROUP BY
         internal.resource,
         DATE_TRUNC('day', internal.datetime)

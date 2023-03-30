@@ -1,7 +1,0 @@
-EXPLAIN (ANALYSE ON, FORMAT JSON, BUFFERS ON)
-SELECT
-    COUNT(*)
-FROM timeseries
-WHERE
-    datetime BETWEEN '2020-02-01' AND '2020-02-13 23:59:59' AND
-    status = true
