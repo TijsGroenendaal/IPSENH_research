@@ -17,6 +17,7 @@ INNER JOIN (
         DATE_TRUNC('day', internal.datetime)
     ) internal ON internal.resource = external.resource AND internal.date = DATE_TRUNC('day', external.datetime)
 WHERE
-    status = TRUE AND
+    external.resource = internal.resource AND
+    external.status = TRUE AND
     external.datetime BETWEEN '2020-01-01' AND '2020-01-31 23:59:49'
 GROUP BY external.resource, DATE_TRUNC('day', external.datetime), internal.count
