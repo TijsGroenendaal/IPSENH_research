@@ -69,3 +69,5 @@ for config in "${conf_dir}"/*.conf; do
 		python3 measurement_result_merger.py -s "$sample_output_dir" -o "$sample_output_dir/results.csv"
 	done
 done
+
+python3 final_merger.py -o $output_dir
