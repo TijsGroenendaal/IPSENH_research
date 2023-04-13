@@ -10,8 +10,8 @@
       "Total Cost": 967798.73,
       "Plan Rows": 100,
       "Plan Width": 20,
-      "Actual Startup Time": 319.677,
-      "Actual Total Time": 319.679,
+      "Actual Startup Time": 315.396,
+      "Actual Total Time": 315.398,
       "Actual Rows": 1,
       "Actual Loops": 1,
       "Group Key": [
@@ -41,8 +41,8 @@
           "Total Cost": 8758.42,
           "Plan Rows": 258162,
           "Plan Width": 4,
-          "Actual Startup Time": 195.959,
-          "Actual Total Time": 244.236,
+          "Actual Startup Time": 189.331,
+          "Actual Total Time": 238.642,
           "Actual Rows": 262514,
           "Actual Loops": 1,
           "Index Cond": "(resource = 5005)",
@@ -72,8 +72,8 @@
           "Total Cost": 9577.47,
           "Plan Rows": 1,
           "Plan Width": 8,
-          "Actual Startup Time": 54.763,
-          "Actual Total Time": 54.764,
+          "Actual Startup Time": 56.316,
+          "Actual Total Time": 56.317,
           "Actual Rows": 1,
           "Actual Loops": 1,
           "Shared Hit Blocks": 2198,
@@ -101,7 +101,7 @@
               "Plan Rows": 267841,
               "Plan Width": 0,
               "Actual Startup Time": 0.041,
-              "Actual Total Time": 39.214,
+              "Actual Total Time": 39.977,
               "Actual Rows": 267839,
               "Actual Loops": 1,
               "Index Cond": "(resource = external.resource)",
@@ -135,7 +135,7 @@
       "Temp Read Blocks": 0,
       "Temp Written Blocks": 0
     },
-    "Planning Time": 1.128,
+    "Planning Time": 1.198,
     "Triggers": [],
     "JIT": {
       "Functions": 17,
@@ -146,13 +146,13 @@
         "Deforming": true
       },
       "Timing": {
-        "Generation": 1.848,
-        "Inlining": 54.27,
-        "Optimization": 83.877,
-        "Emission": 57.465,
-        "Total": 197.461
+        "Generation": 1.458,
+        "Inlining": 49.457,
+        "Optimization": 80.841,
+        "Emission": 58.672,
+        "Total": 190.428
       }
     },
-    "Execution Time": 354.85
+    "Execution Time": 347.392
   }
 ]

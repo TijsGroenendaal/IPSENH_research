@@ -10,8 +10,8 @@
       "Total Cost": 967798.73,
       "Plan Rows": 100,
       "Plan Width": 20,
-      "Actual Startup Time": 307.38,
-      "Actual Total Time": 307.382,
+      "Actual Startup Time": 314.662,
+      "Actual Total Time": 314.665,
       "Actual Rows": 1,
       "Actual Loops": 1,
       "Group Key": [
@@ -41,8 +41,8 @@
           "Total Cost": 8758.42,
           "Plan Rows": 258162,
           "Plan Width": 4,
-          "Actual Startup Time": 189.929,
-          "Actual Total Time": 233.913,
+          "Actual Startup Time": 197.158,
+          "Actual Total Time": 238.54,
           "Actual Rows": 262514,
           "Actual Loops": 1,
           "Index Cond": "(resource = 5005)",
@@ -72,8 +72,8 @@
           "Total Cost": 9577.47,
           "Plan Rows": 1,
           "Plan Width": 8,
-          "Actual Startup Time": 53.04,
-          "Actual Total Time": 53.04,
+          "Actual Startup Time": 55.314,
+          "Actual Total Time": 55.315,
           "Actual Rows": 1,
           "Actual Loops": 1,
           "Shared Hit Blocks": 2198,
@@ -100,8 +100,8 @@
               "Total Cost": 8907.86,
               "Plan Rows": 267841,
               "Plan Width": 0,
-              "Actual Startup Time": 0.04,
-              "Actual Total Time": 37.945,
+              "Actual Startup Time": 0.043,
+              "Actual Total Time": 39.322,
               "Actual Rows": 267839,
               "Actual Loops": 1,
               "Index Cond": "(resource = external.resource)",
@@ -135,7 +135,7 @@
       "Temp Read Blocks": 0,
       "Temp Written Blocks": 0
     },
-    "Planning Time": 0.802,
+    "Planning Time": 0.683,
     "Triggers": [],
     "JIT": {
       "Functions": 17,
@@ -146,13 +146,13 @@
         "Deforming": true
       },
       "Timing": {
-        "Generation": 1.457,
-        "Inlining": 48.319,
-        "Optimization": 80.17,
-        "Emission": 61.145,
-        "Total": 191.09
+        "Generation": 1.387,
+        "Inlining": 50.451,
+        "Optimization": 86.606,
+        "Emission": 59.767,
+        "Total": 198.211
       }
     },
-    "Execution Time": 338.492
+    "Execution Time": 348.473
   }
 ]
