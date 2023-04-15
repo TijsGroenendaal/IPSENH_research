@@ -52,16 +52,20 @@ for config in "${conf_dir}"/*.conf; do
 	sudo cp -r "$config" "${psql_config}/postgresql.conf"
 
 	conf_output_dir="${output_dir}/$(basename "$config" .conf)"
-
-	mkdir "$conf_output_dir"
+	if [[ ! -d "$conf_output_dir" ]]; then
+		mkdir "$conf_output_dir"
+	fi
 
 	for query in "$query_dir"/*.sql; do
 		sudo systemctl restart postgresql
 		echo -e "Executing Query ${Purple}${query}${Color_Off}"
 		sample_output_dir="${conf_output_dir}/$(basename "${query}" .sql)"
-		mkdir "$sample_output_dir"
+		if [[ ! -d "$sample_output_dir" ]]; then
+			mkdir "$sample_output_dir"
+		fi
+
 		for sample in $(seq 1 $sample_count); do
-		  show_progress "$sample" "$sample_count"
+			show_progress "$sample" "$sample_count"
 			file_output="${sample_output_dir}/sample_${sample}.json"
 			psql -U postgres -f "$query" -t -o "$file_output"
 			python3 output_cleaner.py -f "${file_output}"

@@ -10,8 +10,8 @@
       "Total Cost": 288601919.76,
       "Plan Rows": 535682200,
       "Plan Width": 28,
-      "Actual Startup Time": 8210.814,
-      "Actual Total Time": 10424.997,
+      "Actual Startup Time": 7817.534,
+      "Actual Total Time": 9905.619,
       "Actual Rows": 310,
       "Actual Loops": 1,
       "Group Key": [
@@ -27,7 +27,7 @@
       "Local Read Blocks": 0,
       "Local Dirtied Blocks": 0,
       "Local Written Blocks": 0,
-      "Temp Read Blocks": 165288,
+      "Temp Read Blocks": 165220,
       "Temp Written Blocks": 219015,
       "Plans": [
         {
@@ -39,8 +39,8 @@
           "Total Cost": 258969535.27,
           "Plan Rows": 1757953499,
           "Plan Width": 20,
-          "Actual Startup Time": 8207.194,
-          "Actual Total Time": 10144.429,
+          "Actual Startup Time": 7813.959,
+          "Actual Total Time": 9608.578,
           "Actual Rows": 2624996,
           "Actual Loops": 1,
           "Workers Planned": 5,
@@ -53,7 +53,7 @@
           "Local Read Blocks": 0,
           "Local Dirtied Blocks": 0,
           "Local Written Blocks": 0,
-          "Temp Read Blocks": 165288,
+          "Temp Read Blocks": 165220,
           "Temp Written Blocks": 219015,
           "Plans": [
             {
@@ -65,8 +65,8 @@
               "Total Cost": 47267314.68,
               "Plan Rows": 351590700,
               "Plan Width": 20,
-              "Actual Startup Time": 8033.825,
-              "Actual Total Time": 8298.102,
+              "Actual Startup Time": 7691.938,
+              "Actual Total Time": 7941.483,
               "Actual Rows": 437499,
               "Actual Loops": 6,
               "Sort Key": [
@@ -79,7 +79,7 @@
                 "(date_trunc('day'::text, external.datetime))"
               ],
               "Full-sort Groups": {
-                "Group Count": 110,
+                "Group Count": 74,
                 "Sort Methods Used": [
                   "quicksort"
                 ],
@@ -89,13 +89,13 @@
                 }
               },
               "Pre-sorted Groups": {
-                "Group Count": 111,
+                "Group Count": 73,
                 "Sort Methods Used": [
                   "quicksort"
                 ],
                 "Sort Space Memory": {
-                  "Average Sort Space Used": 913,
-                  "Peak Sort Space Used": 916
+                  "Average Sort Space Used": 910,
+                  "Peak Sort Space Used": 915
                 }
               },
               "Shared Hit Blocks": 153410,
@@ -106,13 +106,13 @@
               "Local Read Blocks": 0,
               "Local Dirtied Blocks": 0,
               "Local Written Blocks": 0,
-              "Temp Read Blocks": 165288,
+              "Temp Read Blocks": 165220,
               "Temp Written Blocks": 219015,
               "Workers": [
                 {
                   "Worker Number": 0,
                   "Full-sort Groups": {
-                    "Group Count": 84,
+                    "Group Count": 75,
                     "Sort Methods Used": [
                       "quicksort"
                     ],
@@ -122,7 +122,7 @@
                     }
                   },
                   "Pre-sorted Groups": {
-                    "Group Count": 84,
+                    "Group Count": 75,
                     "Sort Methods Used": [
                       "quicksort"
                     ],
@@ -135,7 +135,7 @@
                 {
                   "Worker Number": 1,
                   "Full-sort Groups": {
-                    "Group Count": 72,
+                    "Group Count": 82,
                     "Sort Methods Used": [
                       "quicksort"
                     ],
@@ -145,12 +145,12 @@
                     }
                   },
                   "Pre-sorted Groups": {
-                    "Group Count": 72,
+                    "Group Count": 83,
                     "Sort Methods Used": [
                       "quicksort"
                     ],
                     "Sort Space Memory": {
-                      "Average Sort Space Used": 911,
+                      "Average Sort Space Used": 914,
                       "Peak Sort Space Used": 915
                     }
                   }
@@ -158,7 +158,7 @@
                 {
                   "Worker Number": 2,
                   "Full-sort Groups": {
-                    "Group Count": 68,
+                    "Group Count": 74,
                     "Sort Methods Used": [
                       "quicksort"
                     ],
@@ -168,7 +168,30 @@
                     }
                   },
                   "Pre-sorted Groups": {
-                    "Group Count": 68,
+                    "Group Count": 74,
+                    "Sort Methods Used": [
+                      "quicksort"
+                    ],
+                    "Sort Space Memory": {
+                      "Average Sort Space Used": 911,
+                      "Peak Sort Space Used": 916
+                    }
+                  }
+                },
+                {
+                  "Worker Number": 3,
+                  "Full-sort Groups": {
+                    "Group Count": 74,
+                    "Sort Methods Used": [
+                      "quicksort"
+                    ],
+                    "Sort Space Memory": {
+                      "Average Sort Space Used": 29,
+                      "Peak Sort Space Used": 29
+                    }
+                  },
+                  "Pre-sorted Groups": {
+                    "Group Count": 74,
                     "Sort Methods Used": [
                       "quicksort"
                     ],
@@ -179,32 +202,9 @@
                   }
                 },
                 {
-                  "Worker Number": 3,
-                  "Full-sort Groups": {
-                    "Group Count": 63,
-                    "Sort Methods Used": [
-                      "quicksort"
-                    ],
-                    "Sort Space Memory": {
-                      "Average Sort Space Used": 29,
-                      "Peak Sort Space Used": 29
-                    }
-                  },
-                  "Pre-sorted Groups": {
-                    "Group Count": 63,
-                    "Sort Methods Used": [
-                      "quicksort"
-                    ],
-                    "Sort Space Memory": {
-                      "Average Sort Space Used": 915,
-                      "Peak Sort Space Used": 917
-                    }
-                  }
-                },
-                {
                   "Worker Number": 4,
                   "Full-sort Groups": {
-                    "Group Count": 63,
+                    "Group Count": 80,
                     "Sort Methods Used": [
                       "quicksort"
                     ],
@@ -214,13 +214,13 @@
                     }
                   },
                   "Pre-sorted Groups": {
-                    "Group Count": 62,
+                    "Group Count": 80,
                     "Sort Methods Used": [
                       "quicksort"
                     ],
                     "Sort Space Memory": {
-                      "Average Sort Space Used": 907,
-                      "Peak Sort Space Used": 915
+                      "Average Sort Space Used": 913,
+                      "Peak Sort Space Used": 917
                     }
                   }
                 }
@@ -236,8 +236,8 @@
                   "Total Cost": 6341607.39,
                   "Plan Rows": 351590700,
                   "Plan Width": 20,
-                  "Actual Startup Time": 8029.623,
-                  "Actual Total Time": 8181.514,
+                  "Actual Startup Time": 7686.922,
+                  "Actual Total Time": 7828.127,
                   "Actual Rows": 437499,
                   "Actual Loops": 6,
                   "Inner Unique": true,
@@ -250,7 +250,7 @@
                   "Local Read Blocks": 0,
                   "Local Dirtied Blocks": 0,
                   "Local Written Blocks": 0,
-                  "Temp Read Blocks": 165288,
+                  "Temp Read Blocks": 165220,
                   "Temp Written Blocks": 219015,
                   "Workers": [],
                   "Plans": [
@@ -263,8 +263,8 @@
                       "Total Cost": 1055983.64,
                       "Plan Rows": 5250736,
                       "Plan Width": 12,
-                      "Actual Startup Time": 4914.171,
-                      "Actual Total Time": 5272.779,
+                      "Actual Startup Time": 4625.259,
+                      "Actual Total Time": 5029.995,
                       "Actual Rows": 2187417,
                       "Actual Loops": 6,
                       "Sort Key": [
@@ -272,7 +272,7 @@
                         "(date_trunc('day'::text, external.datetime))"
                       ],
                       "Sort Method": "external merge",
-                      "Sort Space Used": 147264,
+                      "Sort Space Used": 140872,
                       "Sort Space Type": "Disk",
                       "Shared Hit Blocks": 21231,
                       "Shared Read Blocks": 175711,
@@ -282,37 +282,37 @@
                       "Local Read Blocks": 0,
                       "Local Dirtied Blocks": 0,
                       "Local Written Blocks": 0,
-                      "Temp Read Blocks": 165288,
+                      "Temp Read Blocks": 165220,
                       "Temp Written Blocks": 219015,
                       "Workers": [
                         {
                           "Worker Number": 0,
                           "Sort Method": "external merge",
-                          "Sort Space Used": 146384,
+                          "Sort Space Used": 146872,
                           "Sort Space Type": "Disk"
                         },
                         {
                           "Worker Number": 1,
                           "Sort Method": "external merge",
-                          "Sort Space Used": 147048,
+                          "Sort Space Used": 150000,
                           "Sort Space Type": "Disk"
                         },
                         {
                           "Worker Number": 2,
                           "Sort Method": "external merge",
-                          "Sort Space Used": 149544,
+                          "Sort Space Used": 141776,
                           "Sort Space Type": "Disk"
                         },
                         {
                           "Worker Number": 3,
                           "Sort Method": "external merge",
-                          "Sort Space Used": 147776,
+                          "Sort Space Used": 148704,
                           "Sort Space Type": "Disk"
                         },
                         {
                           "Worker Number": 4,
                           "Sort Method": "external merge",
-                          "Sort Space Used": 135600,
+                          "Sort Space Used": 145392,
                           "Sort Space Type": "Disk"
                         }
                       ],
@@ -328,8 +328,8 @@
                           "Total Cost": 277294.34,
                           "Plan Rows": 5250736,
                           "Plan Width": 12,
-                          "Actual Startup Time": 555.149,
-                          "Actual Total Time": 2307.944,
+                          "Actual Startup Time": 549.532,
+                          "Actual Total Time": 2245.446,
                           "Actual Rows": 4374737,
                           "Actual Loops": 6,
                           "Filter": "(status AND (datetime >= '2020-01-01 00:00:00'::timestamp without time zone) AND (datetime <= '2020-01-31 23:59:49'::timestamp without time zone))",
@@ -357,8 +357,8 @@
                       "Total Cost": 831271.12,
                       "Plan Rows": 2678411,
                       "Plan Width": 20,
-                      "Actual Startup Time": 2554.333,
-                      "Actual Total Time": 2554.445,
+                      "Actual Startup Time": 2447.767,
+                      "Actual Total Time": 2447.883,
                       "Actual Rows": 320,
                       "Actual Loops": 6,
                       "Sort Key": [
@@ -422,8 +422,8 @@
                           "Total Cost": 401973.15,
                           "Plan Rows": 2678411,
                           "Plan Width": 20,
-                          "Actual Startup Time": 2553.965,
-                          "Actual Total Time": 2554.219,
+                          "Actual Startup Time": 2447.42,
+                          "Actual Total Time": 2447.671,
                           "Actual Rows": 320,
                           "Actual Loops": 6,
                           "Group Key": [
@@ -487,8 +487,8 @@
                               "Total Cost": 164054.93,
                               "Plan Rows": 2678411,
                               "Plan Width": 12,
-                              "Actual Startup Time": 0.073,
-                              "Actual Total Time": 1697.238,
+                              "Actual Startup Time": 0.065,
+                              "Actual Total Time": 1641.538,
                               "Actual Rows": 2678400,
                               "Actual Loops": 6,
                               "Inner Unique": false,
@@ -515,8 +515,8 @@
                                   "Total Cost": 2.25,
                                   "Plan Rows": 10,
                                   "Plan Width": 4,
-                                  "Actual Startup Time": 0.037,
-                                  "Actual Total Time": 1.397,
+                                  "Actual Startup Time": 0.036,
+                                  "Actual Total Time": 0.055,
                                   "Actual Rows": 10,
                                   "Actual Loops": 6,
                                   "Filter": "(r_group = 5)",
@@ -546,8 +546,8 @@
                                   "Total Cost": 13057.26,
                                   "Plan Rows": 267841,
                                   "Plan Width": 12,
-                                  "Actual Startup Time": 0.013,
-                                  "Actual Total Time": 73.458,
+                                  "Actual Startup Time": 0.011,
+                                  "Actual Total Time": 70.982,
                                   "Actual Rows": 267840,
                                   "Actual Loops": 60,
                                   "Index Cond": "(resource = r.id)",
@@ -590,7 +590,7 @@
       "Temp Read Blocks": 0,
       "Temp Written Blocks": 0
     },
-    "Planning Time": 0.905,
+    "Planning Time": 0.92,
     "Triggers": [],
     "JIT": {
       "Functions": 165,
@@ -601,13 +601,13 @@
         "Deforming": true
       },
       "Timing": {
-        "Generation": 26.399,
-        "Inlining": 695.603,
-        "Optimization": 1547.921,
-        "Emission": 1084.896,
-        "Total": 3354.818
+        "Generation": 29.163,
+        "Inlining": 580.244,
+        "Optimization": 1595.131,
+        "Emission": 1111.35,
+        "Total": 3315.888
       }
     },
-    "Execution Time": 10478.941
+    "Execution Time": 9959.759
   }
 ]

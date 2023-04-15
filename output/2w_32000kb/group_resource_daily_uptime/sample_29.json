@@ -10,8 +10,8 @@
       "Total Cost": 173687957.45,
       "Plan Rows": 535682200,
       "Plan Width": 28,
-      "Actual Startup Time": 13067.058,
-      "Actual Total Time": 13068.716,
+      "Actual Startup Time": 12995.364,
+      "Actual Total Time": 12996.914,
       "Actual Rows": 310,
       "Actual Loops": 1,
       "Group Key": [
@@ -44,8 +44,8 @@
           "Total Cost": 5891415.15,
           "Plan Rows": 1757953499,
           "Plan Width": 20,
-          "Actual Startup Time": 5131.885,
-          "Actual Total Time": 12601.33,
+          "Actual Startup Time": 5033.936,
+          "Actual Total Time": 12506.94,
           "Actual Rows": 2624996,
           "Actual Loops": 1,
           "Inner Unique": true,
@@ -72,8 +72,8 @@
               "Total Cost": 598703.68,
               "Plan Rows": 26253678,
               "Plan Width": 12,
-              "Actual Startup Time": 284.41,
-              "Actual Total Time": 3284.933,
+              "Actual Startup Time": 267.85,
+              "Actual Total Time": 3206.543,
               "Actual Rows": 26248420,
               "Actual Loops": 1,
               "Filter": "(status AND (datetime >= '2020-01-01 00:00:00'::timestamp without time zone) AND (datetime <= '2020-01-31 23:59:49'::timestamp without time zone))",
@@ -98,8 +98,8 @@
               "Total Cost": 428757.26,
               "Plan Rows": 2678411,
               "Plan Width": 20,
-              "Actual Startup Time": 1257.502,
-              "Actual Total Time": 1257.505,
+              "Actual Startup Time": 1245.671,
+              "Actual Total Time": 1245.674,
               "Actual Rows": 320,
               "Actual Loops": 1,
               "Hash Buckets": 1048576,
@@ -129,8 +129,8 @@
                   "Total Cost": 401973.15,
                   "Plan Rows": 2678411,
                   "Plan Width": 20,
-                  "Actual Startup Time": 1254.392,
-                  "Actual Total Time": 1257.344,
+                  "Actual Startup Time": 1242.501,
+                  "Actual Total Time": 1245.425,
                   "Actual Rows": 320,
                   "Actual Loops": 1,
                   "Group Key": [
@@ -162,8 +162,8 @@
                       "Total Cost": 164054.93,
                       "Plan Rows": 2678411,
                       "Plan Width": 12,
-                      "Actual Startup Time": 0.045,
-                      "Actual Total Time": 844.589,
+                      "Actual Startup Time": 0.044,
+                      "Actual Total Time": 839.117,
                       "Actual Rows": 2678400,
                       "Actual Loops": 1,
                       "Inner Unique": false,
@@ -190,7 +190,7 @@
                           "Plan Rows": 10,
                           "Plan Width": 4,
                           "Actual Startup Time": 0.017,
-                          "Actual Total Time": 0.04,
+                          "Actual Total Time": 0.039,
                           "Actual Rows": 10,
                           "Actual Loops": 1,
                           "Filter": "(r_group = 5)",
@@ -220,7 +220,7 @@
                           "Plan Rows": 267841,
                           "Plan Width": 12,
                           "Actual Startup Time": 0.011,
-                          "Actual Total Time": 36.089,
+                          "Actual Total Time": 35.751,
                           "Actual Rows": 267840,
                           "Actual Loops": 10,
                           "Index Cond": "(resource = r.id)",
@@ -258,7 +258,7 @@
       "Temp Read Blocks": 0,
       "Temp Written Blocks": 0
     },
-    "Planning Time": 0.899,
+    "Planning Time": 1.189,
     "Triggers": [],
     "JIT": {
       "Functions": 29,
@@ -269,13 +269,13 @@
         "Deforming": true
       },
       "Timing": {
-        "Generation": 2.378,
-        "Inlining": 49.431,
-        "Optimization": 121.961,
-        "Emission": 112.635,
-        "Total": 286.404
+        "Generation": 2.412,
+        "Inlining": 47.719,
+        "Optimization": 118.318,
+        "Emission": 101.401,
+        "Total": 269.85
       }
     },
-    "Execution Time": 13108.175
+    "Execution Time": 13033.294
   }
 ]
