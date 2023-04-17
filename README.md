@@ -1,14 +1,18 @@
 # IPSENH Research
 I want to measure the difference in query speed based on the combination in `work_mem` and `max_parallel_workers_per_gather`.
 
-## Sample set
-Maximum memory consumed by a single query should be around the value that is stored in the database. 
-Example when storing 100mb of data:
-- 1x `100mb` 
-- 2x `50mb`
-- 3x `33.33mb`
-- 4x `25.0`
-- continuing
+## Configuration files
+In the `config` folder are the configuration files for the postgresql server. The configuration files are based on the [official documentation](https://www.postgresql.org/docs/12/runtime-config-resource.html).
+- The max_parallel_workers are set to 34.
+- The max_worker_processes are set to 34.
+- The shared buffers are set to 1024MB (Which is 25% of the system memory).
+- The file names are based on the amount of workers and the amount of memory per worker.
+  - 2w_32000kb.conf
+    - 2 workers | 32000kb memory per worker
+  - 4w_16000kb.conf
+    - 4 workers | 16000kb memory per worker
+
+
 
 ## Protecting environment:
 - For each new sample set the postgresql server should be restarted
@@ -17,6 +21,7 @@ Example when storing 100mb of data:
 - Same base operating system.
 - Same postgresql version
 - Configuration allowed to edit
+  - `shared_buffers` (Shared memory between workers) 
   - `max_parallel_workers_per_gather` (Max parallel workers per query)
   - `work_mem` (Max memory per operation)
   - `max_worker_processes` (Maximum background processes)
@@ -24,7 +29,6 @@ Example when storing 100mb of data:
 
 
 ## Query scenarios
-
 For the queries a theoretical scenario will be used where in we want to keep track of the liveliness of each container.
 
 The queries are based on a theoretical analyses dashboard. 
